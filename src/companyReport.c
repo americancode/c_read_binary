@@ -80,6 +80,7 @@ void loadDepts(char *fileName) {
 }
 
 
+
 /**
  * Load Employees from a binary file.  The employees are added to the list of employees
  * for their respective Department as indicated by deptCode.

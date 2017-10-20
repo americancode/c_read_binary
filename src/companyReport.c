@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "dept.h"
 #include "emp.h"
 #include "company.h"
@@ -23,7 +24,7 @@ Dept *readDept(FILE *fileName) {
 		char deptName[20];
 		char mgrEmpId[10];
 		char buffer[1000];
-		int numberReceived = fgets(buffer, 1000, fileName);
+		int numberReceived = (int) fgets(buffer, 1000, fileName);
 		if (numberReceived < 50) {
 			return NULL;
 		}
@@ -131,21 +132,21 @@ Emp *readEmployee(FILE *employeeFile) {
 	    float fSalary;
 	} salary;
 
-	int imonth = NULL;
-	int iday = NULL;
+	int imonth = 0;
+	int iday = 0;
 
 	union _year {
 		char cyear[2];
 		short syear;
 	} year;
-	int iyear = NULL;
+	int iyear = 0;
 
 	union _vacationDays {
 		char cdays[2];
 		short sdays;
 	} vacationDays;
-	int ivacationDays = NULL;
-	char training = NULL;
+	int ivacationDays = 0;
+	char training = 0;
 
 
 	int numberRead = fread(buffer, 1, 51, employeeFile);

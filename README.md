@@ -1,1 +1,3 @@
-cosc430Assn2
+A simple binary, text file IO assignment in C
+To Run:
+./compile.sh && ./build

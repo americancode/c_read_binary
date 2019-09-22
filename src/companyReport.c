@@ -75,7 +75,6 @@ void loadDepts(char *fileName) {
 	while ((department = readDept(departmentFile)) != NULL) {
 		addDepartment(company, department);
 	}
-
 	fclose(departmentFile);
 
 }
@@ -268,13 +267,14 @@ int main(int argc, char **argv) {
 	company = allocComp();
 
 	if (argc < 2) {
-		printf("Usage: companyReport <department file> <employee file>");
+		printf("Usage: companyReport <department file> <employee file>\n");
 		exit(1);
 	}
-
+	printf("Loading Department file\n");
 	loadDepts(argv[1]);
+	printf("Loading Employee file\n");
 	loadEmployees(argv[2]);
-	printCompanyReport();
+    printCompanyReport();
 
 	return EXIT_SUCCESS;
 }
